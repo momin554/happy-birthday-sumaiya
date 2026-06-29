@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>শুভ জন্মদিন সুমাইয়া!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;900&family=Pacifico&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --electric-purple: #8B1CFF;
+            --electric-purple-light: #F0E6FF;
+            --electric-purple-dark: #5E00D4;
+            --neon-blue: #00D4FF;
+            --neon-blue-light: #E0F9FF;
+            --neon-blue-dark: #0099CC;
+            --hot-pink: #FF1493;
+            --hot-pink-light: #FFE0F0;
+            --hot-pink-dark: #C71585;
+            --neon-green: #39FF14;
+            --neon-green-light: #E8FFE0;
+            --neon-green-dark: #2ECC40;
+            --laser-pink: #FF3BD4;
+            --laser-pink-light: #FFE0F8;
+            --signal-blue: #3B7BFF;
+            --signal-blue-light: #E0ECFF;
+            --dark: #1A0A2E;
+            --shadow: 0 20px 60px rgba(139, 28, 255, 0.25);
+        }
+
+        html, body {
+            font-family: 'Noto Sans Bengali', sans-serif;
+            background: linear-gradient(180deg, #F8F0FF 0%, #E8D5FF 15%, #D5E8FF 35%, #C8F0FF 60%, #D5FFE8 85%, #F0FFF5 100%);
+            min-height: 100vh;
+            min-height: 100dvh;
+            color: var(--dark);
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            padding: 4px 6px;
+        }
+
+        /* Floating hearts */
+        .hearts-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .heart-float {
+            position: absolute;
+            animation: heartFloat 15s linear infinite;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+        }
+
+        @keyframes heartFloat {
+            0% { transform: translateY(100vh) scale(0.3) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.15; }
+            90% { opacity: 0.15; }
+            100% { transform: translateY(-50px) scale(1) rotate(360deg); opacity: 0; }
+        }
+
+        /* ========== MAIN CARD ========== */
+        .main-card {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            border: 5px solid var(--electric-purple);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 100%;
+            padding: 16px 8px 20px 8px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        @media (min-width: 420px) {
+            .main-card {
+                max-width: 400px;
+                padding: 24px 16px 28px 16px;
+            }
+        }
+
+        .main-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--electric-purple), var(--hot-pink), var(--neon-blue), var(--neon-green), var(--laser-pink), var(--electric-purple));
+            background-size: 300% 100%;
+            animation: rainbow 4s linear infinite;
+        }
+
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 300% 50%; }
+        }
+
+        /* ========== TITLE ========== */
+        .title-section {
+            text-align: center;
+            margin-bottom: 14px;
+            padding-top: 6px;
+        }
+
+        .title-emoji {
+            font-size: 2.4rem;
+            display: block;
+            margin-bottom: 6px;
+            animation: bounce 2s ease infinite;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .title {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--electric-purple);
+            line-height: 1.2;
+            margin-bottom: 4px;
+            text-shadow: 2px 2px 0px rgba(139, 28, 255, 0.15);
+        }
+
+        .title span {
+            color: var(--hot-pink);
+        }
+
+        .subtitle {
+            font-size: 0.78rem;
+            color: #aaa;
+            font-weight: 400;
+        }
+
+        /* ========== FOR WHOM ========== */
+        .for-whom-box {
+            background: linear-gradient(135deg, var(--electric-purple-light), var(--laser-pink-light));
+            border: 4px solid var(--electric-purple);
+            border-radius: 18px;
+            padding: 14px 10px;
+            margin-bottom: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(139, 28, 255, 0.15);
+        }
+
+        .for-whom-label {
+            font-size: 0.7rem;
+            color: var(--electric-purple-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .for-whom-text {
+            font-size: 0.88rem;
+            color: var(--dark);
+            font-weight: 500;
+            line-height: 1.6;
+        }
+
+        .for-whom-text strong {
+            color: var(--electric-purple);
+            font-size: 0.98rem;
+        }
+
+        /* ========== PROFILE IMAGE ========== */
+        .profile-section {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .profile-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 170px;
+            height: 170px;
+        }
+
+        .profile-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -8px; left: -8px;
+            right: -8px; bottom: -8px;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, var(--electric-purple), var(--hot-pink), var(--neon-blue), var(--neon-green), var(--laser-pink), var(--electric-purple));
+            animation: spin 6s linear infinite;
+            z-index: 0;
+        }
+
+        .profile-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -3px; left: -3px;
+            right: -3px; bottom: -3px;
+            border-radius: 50%;
+            background: #fff;
+            z-index: 0;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .profile-img {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center 15%;
+            background: linear-gradient(135deg, var(--electric-purple-light), var(--laser-pink-light));
+            border: 4px solid #fff;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+            display: block;
+        }
+
+        .profile-name {
+            margin-top: 10px;
+            font-family: 'Pacifico', cursive;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--electric-purple);
+        }
+
+        .profile-tag {
+            font-size: 0.78rem;
+            color: #bbb;
+            margin-top: 2px;
+        }
+
+        /* ========== AGE BOX ========== */
+        .age-box {
+            background: linear-gradient(135deg, var(--hot-pink-light), var(--laser-pink-light));
+            border: 4px solid var(--hot-pink);
+            border-radius: 18px;
+            padding: 14px 10px;
+            margin-bottom: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.15);
+        }
+
+        .age-box::after {
+            content: '🎂';
+            position: absolute;
+            top: 6px; right: 10px;
+            font-size: 1.2rem;
+            opacity: 0.2;
+        }
+
+        .age-label {
+            font-size: 0.7rem;
+            color: var(--hot-pink-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .age-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--hot-pink);
+            line-height: 1;
+        }
+
+        .age-text {
+            font-size: 0.9rem;
+            color: #aaa;
+            margin-top: 4px;
+        }
+
+        .age-detail {
+            font-size: 0.75rem;
+            color: #ccc;
+            margin-top: 2px;
+        }
+
+        /* ========== COUNTDOWN BOX ========== */
+        .countdown-box {
+            background: linear-gradient(135deg, var(--neon-blue-light), var(--signal-blue-light));
+            border: 4px solid var(--neon-blue);
+            border-radius: 18px;
+            padding: 14px 8px;
+            margin-bottom: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.15);
+        }
+
+        .countdown-box::after {
+            content: '⏰';
+            position: absolute;
+            top: 6px; right: 10px;
+            font-size: 1.2rem;
+            opacity: 0.2;
+        }
+
+        .countdown-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--neon-blue-dark);
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+        }
+
+        .countdown-item {
+            background: #fff;
+            border: 2.5px solid var(--neon-blue);
+            border-radius: 12px;
+            padding: 8px 2px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--dark);
+            display: block;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .countdown-unit {
+            font-size: 0.62rem;
+            color: #bbb;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ========== BIRTHDATE BOX ========== */
+        .birthdate-box {
+            background: linear-gradient(135deg, var(--signal-blue-light), var(--neon-green-light));
+            border: 4px solid var(--signal-blue);
+            border-radius: 18px;
+            padding: 14px 10px;
+            margin-bottom: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(59, 123, 255, 0.12);
+        }
+
+        .birthdate-box::after {
+            content: '📅';
+            position: absolute;
+            top: 6px; right: 10px;
+            font-size: 1.2rem;
+            opacity: 0.2;
+        }
+
+        .birthdate-label {
+            font-size: 0.7rem;
+            color: var(--signal-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+
+        .birthdate-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--signal-blue);
+        }
+
+        .birthdate-sub {
+            font-size: 0.78rem;
+            color: var(--signal-blue);
+            margin-top: 2px;
+            opacity: 0.8;
+        }
+
+        .birthdate-zodiac {
+            font-size: 0.75rem;
+            color: var(--signal-blue);
+            margin-top: 2px;
+            font-weight: 600;
+        }
+
+        /* ========== WISHES BOX ========== */
+        .wishes-box {
+            background: linear-gradient(135deg, var(--laser-pink-light), var(--electric-purple-light));
+            border: 4px solid var(--laser-pink);
+            border-radius: 18px;
+            padding: 14px 10px;
+            margin-bottom: 12px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(255, 59, 212, 0.12);
+        }
+
+        .wishes-box::after {
+            content: '💌';
+            position: absolute;
+            top: 6px; right: 10px;
+            font-size: 1.2rem;
+            opacity: 0.2;
+        }
+
+        .wishes-title {
+            font-size: 0.92rem;
+            font-weight: 800;
+            color: var(--laser-pink);
+            margin-bottom: 8px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .wishes-text {
+            font-size: 0.82rem;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        /* ========== DEVELOPER BUTTON ========== */
+        .developer-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--electric-purple), var(--neon-blue));
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 18px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            font-family: 'Noto Sans Bengali', sans-serif;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(139, 28, 255, 0.35);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .developer-btn:active {
+            transform: scale(0.97);
+        }
+
+        /* ========== MODAL ========== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(26, 10, 46, 0.55);
+            backdrop-filter: blur(12px);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 28px 20px;
+            width: 100%;
+            max-width: 340px;
+            text-align: center;
+            box-shadow: 0 24px 60px rgba(26, 10, 46, 0.2);
+            position: relative;
+            border: 5px solid var(--electric-purple);
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px; right: 14px;
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: #ddd;
+        }
+
+        .modal-emoji { font-size: 2.5rem; margin-bottom: 12px; }
+        .modal-title { font-size: 1.2rem; font-weight: 900; color: var(--electric-purple); margin-bottom: 12px; font-family: 'Playfair Display', serif; }
+        .modal-text { font-size: 0.9rem; color: #888; line-height: 1.7; margin-bottom: 16px; }
+        .modal-name {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--electric-purple);
+            background: linear-gradient(135deg, var(--electric-purple-light), var(--laser-pink-light));
+            padding: 10px 16px;
+            border-radius: 50px;
+            display: inline-block;
+            border: 3px solid var(--electric-purple);
+        }
+
+        /* ========== BIRTHDAY OVERLAY ========== */
+        .birthday-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--electric-purple), var(--hot-pink), var(--neon-blue), var(--neon-green));
+            background-size: 400% 400%;
+            animation: bgShift 6s ease infinite;
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 12px;
+        }
+
+        .birthday-overlay.active { display: flex; }
+
+        @keyframes bgShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .birthday-cake {
+            font-size: 5rem;
+            margin-bottom: 14px;
+            animation: cakeBounce 2s ease infinite;
+        }
+
+        @keyframes cakeBounce {
+            0%, 100% { transform: scale(1) rotate(-5deg); }
+            50% { transform: scale(1.1) rotate(5deg); }
+        }
+
+        .birthday-message {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 0 3px 15px rgba(0,0,0,0.15);
+            margin-bottom: 10px;
+            animation: bounceIn 1s ease;
+        }
+
+        .birthday-submessage {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.9);
+            font-weight: 600;
+            margin-bottom: 18px;
+            animation: fadeInUp 1s ease 0.3s both;
+            max-width: 380px;
+            line-height: 1.6;
+        }
+
+        .birthday-age {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.85);
+            background: rgba(255,255,255,0.2);
+            padding: 12px 24px;
+            border-radius: 50px;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease 0.6s both;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========== CONFETTI ========== */
+        .confetti-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 10000;
+            overflow: hidden;
+        }
+
+        .confetti {
+            position: absolute;
+            animation: confettiFall 4s ease-out forwards;
+        }
+
+        @keyframes confettiFall {
+            0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(110vh) rotate(1080deg); opacity: 0; }
+        }
+
+        /* ========== MUSIC BUTTON ========== */
+        .music-btn {
+            position: fixed;
+            bottom: 20px; right: 20px;
+            background: linear-gradient(135deg, var(--electric-purple), var(--neon-blue));
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 48px; height: 48px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(139, 28, 255, 0.4);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .music-btn.visible { display: flex; }
+        .music-btn:active { transform: scale(0.9); }
+
+        .music-btn.playing {
+            animation: pulse 1.2s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(139, 28, 255, 0.4); }
+            50% { transform: scale(1.1); box-shadow: 0 0 0 14px rgba(139, 28, 255, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hearts-bg" id="heartsBg"></div>
+
+    <div class="main-card" id="mainCard">
+
+        <!-- Title TOP -->
+        <div class="title-section">
+            <span class="title-emoji">🎉</span>
+            <h1 class="title">শুভ জন্মদিন <span>সুমাইয়া!</span></h1>
+            <p class="subtitle">পরবর্তী জন্মদিনের অপেক্ষায়...</p>
+        </div>
+
+        <!-- For Whom -->
+        <div class="for-whom-box">
+            <div class="for-whom-label">এই ওয়েবসাইটটি কার জন্য?</div>
+            <div class="for-whom-text">
+                <strong>সুমাইয়া</strong> — আমাদের প্রিয়তমা, আমাদের আনন্দের উৎস। 💖
+            </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="profile-section">
+            <div class="profile-wrapper">
+                <img src="https://i.ibb.co.com/nqwthTvp/image.jpg" 
+                     alt="সুমাইয়া" 
+                     class="profile-img"
+                     onerror="this.src='https://via.placeholder.com/170?text=সুমাইয়া'"
+                     loading="eager"
+                     crossorigin="anonymous">
+            </div>
+            <div class="profile-name">সুমাইয়া</div>
+            <div class="profile-tag">✨ আমাদের প্রিয়তমা ✨</div>
+        </div>
+
+        <!-- Age -->
+        <div class="age-box">
+            <div class="age-label">বর্তমান বয়স</div>
+            <div class="age-number" id="ageNumber">--</div>
+            <div class="age-text" id="ageText">বছর</div>
+            <div class="age-detail" id="ageDetail">--</div>
+        </div>
+
+        <!-- Countdown -->
+        <div class="countdown-box">
+            <div class="countdown-title">🎂 পরবর্তী জন্মদিন পর্যন্ত বাকি</div>
+            <div class="countdown-grid">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="days">00</span>
+                    <span class="countdown-unit">দিন</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="hours">00</span>
+                    <span class="countdown-unit">ঘণ্টা</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="minutes">00</span>
+                    <span class="countdown-unit">মিনিট</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="seconds">00</span>
+                    <span class="countdown-unit">সেকেন্ড</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Birthdate -->
+        <div class="birthdate-box">
+            <div class="birthdate-label">📅 জন্মতারিখ</div>
+            <div class="birthdate-text">৬ই সেপ্টেম্বর, ২০১০</div>
+            <div class="birthdate-sub">সোমবার — সন্ধ্যা ৬:০০ টা</div>
+            <div class="birthdate-zodiac">♍ কন্যা রাশি (Virgo)</div>
+        </div>
+
+        <!-- Wishes -->
+        <div class="wishes-box">
+            <div class="wishes-title">💌 শুভেচ্ছা বার্তা</div>
+            <div class="wishes-text">
+                প্রতিটি দিন তোমার জীবনে আনুক নতুন আলো, নতুন স্বপ্ন আর অসীম আনন্দ।<br>
+                তোমার সব ইচ্ছা পূরণ হোক, সব স্বপ্ন সত্যি হোক।<br>
+                <strong>শুভ জন্মদিন সুমাইয়া! 🎉💖</strong>
+            </div>
+        </div>
+
+        <!-- Developer Button -->
+        <div style="text-align: center;">
+            <button class="developer-btn" onclick="openModal()">
+                ✦ ──『➳ᴹᴿ᭄ ᴍᴏᴍɪɴ ɪsʟᴀᴍ ↟』── ✦
+            </button>
+        </div>
+    </div>
+
+    <!-- Developer Modal -->
+    <div class="modal-overlay" id="devModal" onclick="closeModal(event)">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-emoji">👨‍💻</div>
+            <div class="modal-title">ওয়েবসাইট তৈরি করেছেন</div>
+            <div class="modal-text">
+                এই সুন্দর ওয়েবসাইটটি তৈরি করেছেন<br>
+                আমাদের প্রিয় ডেভেলপার। 💝
+            </div>
+            <div class="modal-name">✦ ──『➳ᴹᴿ᭄ ᴍᴏᴍɪɴ ɪsʟᴀᴍ ↟』── ✦</div>
+        </div>
+    </div>
+
+    <!-- Birthday Overlay -->
+    <div class="birthday-overlay" id="birthdayOverlay">
+        <div class="birthday-cake">🎂</div>
+        <div class="birthday-message">🎉 ওয়েলকাম সুমাইয়া! 🎉</div>
+        <div class="birthday-submessage">
+            আজ তোমার বিশেষ দিন! এই দিনে তুমি এসেছিলে এই পৃথিবীতে।<br>
+            তোমার জীবন ভরে উঠুক আনন্দে, ভালোবাসায় আর সুখে।<br>
+            Happy Birthday! 🎈🎁
+        </div>
+        <div class="birthday-age" id="birthdayAge">তুমি আজ -- বছরে পা দিলে!</div>
+    </div>
+
+    <!-- Confetti -->
+    <div class="confetti-container" id="confetti"></div>
+
+    <!-- Music Button -->
+    <button class="music-btn" id="musicBtn" onclick="toggleMusic()">🎵</button>
+
+    <!-- Audio -->
+    <audio id="birthdayAudio" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Floating hearts
+        function createHearts() {
+            const container = document.getElementById('heartsBg');
+            const hearts = ['💖', '💕', '💗', '💝', '💘', '💓', '💞', '💟'];
+            for (let i = 0; i < 20; i++) {
+                const el = document.createElement('div');
+                el.className = 'heart-float';
+                el.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                el.style.left = Math.random() * 100 + '%';
+                el.style.animationDuration = (12 + Math.random() * 10) + 's';
+                el.style.animationDelay = Math.random() * 15 + 's';
+                el.style.fontSize = (16 + Math.random() * 22) + 'px';
+                container.appendChild(el);
+            }
+        }
+        createHearts();
+
+        // Age
+        function calculateAge() {
+            const birthDate = new Date(2010, 8, 6);
+            const now = new Date();
+            let age = now.getFullYear() - birthDate.getFullYear();
+            const m = now.getMonth() - birthDate.getMonth();
+            const d = now.getDate() - birthDate.getDate();
+            if (m < 0 || (m === 0 && d < 0)) age--;
+            document.getElementById('ageNumber').textContent = age;
+            let nextAge = age + 1;
+            if (now.getMonth() === 8 && now.getDate() === 6) nextAge = age;
+            document.getElementById('ageDetail').textContent = `পরবর্তী জন্মদিনে ${nextAge} বছরে পা দিবে`;
+            return age;
+        }
+
+        // Countdown
+        let isBirthdayMode = false;
+        let confettiTriggered = false;
+
+        function updateCountdown() {
+            const now = new Date();
+            const cy = now.getFullYear();
+            let nb = new Date(cy, 8, 6, 0, 0, 0);
+            if (now > nb) nb = new Date(cy + 1, 8, 6, 0, 0, 0);
+            const isBday = now.getMonth() === 8 && now.getDate() === 6;
+
+            if (isBday && !isBirthdayMode) activateBirthdayMode();
+            else if (!isBday && isBirthdayMode) deactivateBirthdayMode();
+
+            if (!isBirthdayMode) {
+                const diff = nb - now;
+                document.getElementById('days').textContent = String(Math.floor(diff / 86400000)).padStart(2, '0');
+                document.getElementById('hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+            }
+        }
+
+        function activateBirthdayMode() {
+            isBirthdayMode = true;
+            document.getElementById('birthdayOverlay').classList.add('active');
+            document.getElementById('birthdayAge').textContent = `তুমি আজ ${calculateAge()} বছরে পা দিলে! 🎂`;
+            document.getElementById('musicBtn').classList.add('visible');
+            if (!confettiTriggered) {
+                triggerConfetti();
+                confettiTriggered = true;
+                const audio = document.getElementById('birthdayAudio');
+                audio.volume = 0.4;
+                audio.play().catch(() => {});
+            }
+        }
+
+        function deactivateBirthdayMode() {
+            isBirthdayMode = false;
+            document.getElementById('birthdayOverlay').classList.remove('active');
+            document.getElementById('musicBtn').classList.remove('visible');
+            document.getElementById('birthdayAudio').pause();
+            document.getElementById('birthdayAudio').currentTime = 0;
+            confettiTriggered = false;
+        }
+
+        // Confetti
+        function triggerConfetti() {
+            const c = document.getElementById('confetti');
+            const colors = ['#8B1CFF', '#FF1493', '#00D4FF', '#39FF14', '#FF3BD4', '#3B7BFF', '#FFD700', '#FF6A3D'];
+            for (let i = 0; i < 200; i++) {
+                setTimeout(() => {
+                    const el = document.createElement('div');
+                    el.className = 'confetti';
+                    el.style.left = Math.random() * 100 + '%';
+                    el.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    const s = 5 + Math.random() * 12;
+                    el.style.width = s + 'px';
+                    el.style.height = s + 'px';
+                    el.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    el.style.animationDuration = (2.5 + Math.random() * 3) + 's';
+                    c.appendChild(el);
+                    setTimeout(() => el.remove(), 6000);
+                }, i * 20);
+            }
+            if (isBirthdayMode) setTimeout(() => { if (isBirthdayMode) triggerConfetti(); }, 7000);
+        }
+
+        // Music
+        function toggleMusic() {
+            const a = document.getElementById('birthdayAudio');
+            const b = document.getElementById('musicBtn');
+            if (a.paused) { a.play(); b.classList.add('playing'); b.textContent = '🔊'; }
+            else { a.pause(); b.classList.remove('playing'); b.textContent = '🎵'; }
+        }
+
+        // Modal
+        function openModal() { document.getElementById('devModal').classList.add('active'); }
+        function closeModal(e) { if (!e || e.target === document.getElementById('devModal')) document.getElementById('devModal').classList.remove('active'); }
+
+        // Init
+        calculateAge();
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+        setInterval(() => { const n = new Date(); if (n.getMonth() !== 8 || n.getDate() !== 6) confettiTriggered = false; }, 60000);
+    </script>
+</body>
+</html>
